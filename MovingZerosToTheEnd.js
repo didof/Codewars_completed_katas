@@ -17,11 +17,16 @@
  * array.
  */
 var moveZeros = function (arr) {
-    let zerosCount = 0;
-    return arr.reduce(function(accumulator, current) {
+    let zerosCount = 0; // +1
+    return arr.reduce(function(accumulator, current) { // +n
       current !== 0 ? accumulator.push(current) : zerosCount++;
       return accumulator
     }, []).concat(Array.apply(null, Array(zerosCount)).map(function(value) {
       return 0;
     }))
   }
+
+/*
+  Others solutions:
+  Instead of Array.apply(null, Array(count)).map(value => 0) is the same as Array(count).fill(0)
+*/
