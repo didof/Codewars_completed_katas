@@ -10,7 +10,11 @@
 /**
  * @function
  * @param {Array} arr The provided array
- * @returns {Array}
+ * @returns {Array} array where the "0"s are rekegated to the end
+ * The supplied array is filtered, excluding values ​​strictly equal to 0 (integer).
+ * A variable takes into account the number of "0"s encountered. In the end this will be the length
+ * of an array containing only the value 0, concatenated to the tail of the previously filtered
+ * array.
  */
 var moveZeros = function (arr) {
     let zerosCount = 0;
@@ -21,8 +25,3 @@ var moveZeros = function (arr) {
       return 0;
     }))
   }
-
-// # Explaination
-/*
-
-*/
